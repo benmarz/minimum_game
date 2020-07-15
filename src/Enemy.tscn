@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/enemy.png" type="Texture" id=1]
+[ext_resource path="res://src/Entity.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Enemy.gd" type="Script" id=3]
+
+[node name="Enemy" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 1 )
