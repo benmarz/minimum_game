@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Gate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Obstacles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Treasure.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Trap.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 16 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8, 16 )
+
+[node name="Level4" type="Node"]
+
+[node name="Obstacles" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 65536, 0, 0, 65550, 0, 0, 131072, 0, 0, 131086, 0, 0, 196608, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196618, 0, 0, 196619, 0, 0, 196622, 0, 0, 262144, 0, 0, 262147, 0, 0, 262155, 0, 0, 262158, 0, 0, 327680, 0, 0, 327683, 0, 0, 327691, 0, 0, 393216, 0, 0, 393219, 0, 0, 393227, 0, 0, 458752, 0, 0, 458755, 0, 0, 458763, 0, 0, 458766, 0, 0, 524288, 0, 0, 524291, 0, 0, 524299, 0, 0, 524302, 0, 0, 589824, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589838, 0, 0, 655360, 0, 0, 655374, 0, 0, 720896, 0, 0, 720910, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0 )
+
+[node name="Trap" parent="." instance=ExtResource( 4 )]
+position = Vector2( 136, 104 )
+
+[node name="Treasure" parent="." instance=ExtResource( 3 )]
+position = Vector2( 104, 104 )
+
+[node name="Gate" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 8 )
+is_horizontal = true
+destination_scene = "res://src/levels/Level3.tscn"
+destination_gate = "Gate2"
+
+[node name="CollisionShape2D" parent="Gate/Entrance" index="0"]
+shape = SubResource( 1 )
+
+[node name="Exit" parent="Gate" index="1"]
+position = Vector2( 0, -16 )
+
+[node name="CollisionShape2D" parent="Gate/Exit" index="0"]
+shape = SubResource( 2 )
+
+[node name="Gate2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 232, 96 )
+destination_scene = "res://src/levels/Level1.tscn"
+destination_gate = "Gate"
+
+[node name="CollisionShape2D" parent="Gate2/Entrance" index="0"]
+shape = SubResource( 3 )
+
+[node name="Exit" parent="Gate2" index="1"]
+position = Vector2( 16, 0 )
+
+[node name="CollisionShape2D" parent="Gate2/Exit" index="0"]
+shape = SubResource( 4 )
+
+[editable path="Gate"]
+
+[editable path="Gate2"]

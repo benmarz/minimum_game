@@ -11,8 +11,7 @@ extents = Vector2( 8, 8 )
 [node name="Gate" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="Entrance" type="Area2D" parent="."]

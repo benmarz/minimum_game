@@ -45,19 +45,15 @@ position = Vector2( 216, 40 )
 position = Vector2( 200, 56 )
 
 [node name="Trap2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 184, 24 )
+position = Vector2( 160, 24 )
 
 [node name="Trap3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 168, 40 )
-
-[node name="Trap4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 120, 56 )
-
-[node name="Trap5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 136, 40 )
 
 [node name="Gate" parent="." instance=ExtResource( 5 )]
 position = Vector2( 8, 96 )
+destination_scene = "res://src/levels/Level4.tscn"
+destination_gate = "Gate2"
 
 [node name="CollisionShape2D" parent="Gate/Entrance" index="0"]
 shape = SubResource( 1 )
@@ -68,6 +64,8 @@ shape = SubResource( 2 )
 [node name="Gate2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 128, 8 )
 is_horizontal = true
+destination_scene = "res://src/levels/Level2.tscn"
+destination_gate = "Gate"
 
 [node name="CollisionShape2D" parent="Gate2/Entrance" index="0"]
 shape = SubResource( 3 )

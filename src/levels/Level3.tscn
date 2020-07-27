@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Trap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Obstacles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Gate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Treasure.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 88 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 88 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 16, 8 )
+
+[node name="Level3" type="Node"]
+
+[node name="Obstacles" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 327680, 0, 0, 327683, 0, 0, 327690, 0, 0, 393216, 0, 0, 393219, 0, 0, 393226, 0, 0, 458752, 0, 0, 458755, 0, 0, 458762, 0, 0, 524288, 0, 0, 524291, 0, 0, 524298, 0, 0, 589824, 0, 0, 589827, 0, 0, 589834, 0, 0, 655360, 0, 0, 655363, 0, 0, 655370, 0, 0, 720896, 0, 0, 720899, 0, 0, 720906, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0 )
+
+[node name="Trap" parent="." instance=ExtResource( 2 )]
+position = Vector2( 136, 56 )
+
+[node name="Trap2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 88, 56 )
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 72 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 72 )
+
+[node name="Treasure" parent="." instance=ExtResource( 5 )]
+position = Vector2( 104, 120 )
+
+[node name="Treasure2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 120, 120 )
+
+[node name="Treasure3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 120, 136 )
+
+[node name="Treasure4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 104, 136 )
+
+[node name="Gate" parent="." instance=ExtResource( 4 )]
+position = Vector2( 232, 104 )
+destination_scene = "res://src/levels/Level2.tscn"
+destination_gate = "Gate2"
+
+[node name="CollisionShape2D" parent="Gate/Entrance" index="0"]
+shape = SubResource( 1 )
+
+[node name="Exit" parent="Gate" index="1"]
+position = Vector2( 16, 0 )
+
+[node name="CollisionShape2D" parent="Gate/Exit" index="0"]
+shape = SubResource( 2 )
+
+[node name="Gate2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 112, 200 )
+is_horizontal = true
+destination_scene = "res://src/levels/Level4.tscn"
+destination_gate = "Gate"
+
+[node name="CollisionShape2D" parent="Gate2/Entrance" index="0"]
+shape = SubResource( 3 )
+
+[node name="Exit" parent="Gate2" index="1"]
+position = Vector2( 0, 16 )
+
+[node name="CollisionShape2D" parent="Gate2/Exit" index="0"]
+shape = SubResource( 4 )
+
+[editable path="Gate"]
+
+[editable path="Gate2"]

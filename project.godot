@@ -9,20 +9,38 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/Enemy.gd"
+}, {
+"base": "Node2D",
+"class": "Gate",
+"language": "GDScript",
+"path": "res://src/Gate.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Player.gd"
+}, {
+"base": "Area2D",
+"class": "Treasure",
+"language": "GDScript",
+"path": "res://src/Treasure.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Enemy": "",
+"Gate": "",
+"Player": "",
+"Treasure": ""
 }
 
 [application]
 
 config/name="Minimum Game"
 run/main_scene="res://src/Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/obstacle.png"
 
 [autoload]
 
