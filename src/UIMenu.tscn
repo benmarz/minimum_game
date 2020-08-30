@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UIMenu.gd" type="Script" id=1]
+
+[node name="UIMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.5
+margin_top = -23.5
+margin_right = 12.5
+margin_bottom = 23.5
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

@@ -36,13 +36,26 @@ func _switch_level(level_str: String, gate_str: String, offset_pct: float):
 	_load_level(level_str, gate_str, offset_pct)
 
 
-func _on_player_killed():
+func reload_level():
 	Global.enemies = {}
 	Global.curr_treasures = {}
 	call_deferred("_switch_level", Global.level, Global.gate, 0)
 
+
+func start_game():
+	call_deferred("_load_level", "res://src/levels/Level1.tscn", "StartGate", 0)
+
+
+func restart_game():
+	Global.enemies = {}
+	Global.curr_treasures = {}
+	Global.treasures = {}
+	call_deferred("_switch_level", "res://src/levels/Level1.tscn", "StartGate", 0)
+
+
 func _on_exitted_scene(level_str, gate_str, offset_pct):
 	call_deferred("_switch_level", level_str, gate_str, offset_pct)
 
+
 func _ready():
-	_load_level("res://src/levels/Level1.tscn", "StartGate", 0)
+	$UI/StartMenu.open_ui()

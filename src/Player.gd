@@ -42,11 +42,13 @@ func die():
 
 # must be called during idle period
 func disable():
+	visible = false
 	$CollisionShape2D.disabled = true
 
 
 func enable():
 	dead = false
+	visible = true
 	$CollisionShape2D.disabled = false
 
 func count_treasures():

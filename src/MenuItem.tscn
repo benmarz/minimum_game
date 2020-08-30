@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/MenuItem.gd" type="Script" id=1]
+[ext_resource path="res://assets/mago3.tres" type="DynamicFont" id=2]
+
+[node name="MenuItem" type="Label"]
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Item"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
