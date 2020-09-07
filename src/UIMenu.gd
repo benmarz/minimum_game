@@ -1,6 +1,9 @@
 class_name UIMenu
 extends Control
 
+#warning-ignore:unused_signal
+signal switch_menu(menu_name)
+
 var selected_id := 0
 export var menu_path : NodePath = "Menu"
 onready var menu = get_node(menu_path)

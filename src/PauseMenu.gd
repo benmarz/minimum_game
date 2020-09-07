@@ -13,11 +13,9 @@ func menu_action(action_str):
 	match action_str:
 		"Resume":
 			close_ui()
-		"Restart":
-			close_ui()
-			emit_signal("restart_game")
 		"Reload":
 			close_ui()
 			emit_signal("reload_level")
 		"Quit":
-			get_tree().quit()
+			close_ui()
+			emit_signal("restart_game")

@@ -1,12 +1,14 @@
 extends Node
 
+const SAVE_FILE = "user://savegame.save"
+
 var player : Player
 var level: String = ""
 var gate: String = ""
 
-var curr_treasures := {}
-var treasures := {}
-var enemies := {}
+var curr_treasures : Dictionary = {}
+var treasures : Dictionary = {}
+var enemies : Dictionary = {}
 
 func _add_item(item: String, items: Dictionary):
 	if not level in items:

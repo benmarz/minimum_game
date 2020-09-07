@@ -36,6 +36,7 @@ func _physics_process(_delta):
 func die():
 	if not dead:
 		dead = true
+		set_physics_process(false)
 		print("player killed")
 		emit_signal("player_killed")
 
@@ -49,6 +50,7 @@ func disable():
 func enable():
 	dead = false
 	visible = true
+	set_physics_process(true)
 	$CollisionShape2D.disabled = false
 
 func count_treasures():
