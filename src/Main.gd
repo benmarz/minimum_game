@@ -53,6 +53,7 @@ func _load_level(level_str: String, gate_str: String, offset_pct: float):
 	# re-add them. I'm pretty certain that this will work.
 	yield(get_tree(), "physics_frame")
 	yield(get_tree(), "physics_frame")
+	$UI.disabled = false
 	Global.player.enable()
 
 
@@ -72,6 +73,7 @@ func _reset_game():
 	# TODO: check if we actually got a child
 	$Level.remove_child(old_level)
 	old_level.free()
+	$UI.disabled = false
 	$UI/StartMenu.open_ui()
 
 # must be called in idle state
@@ -88,6 +90,7 @@ func _switch_level(level_str: String, gate_str: String, offset_pct: float, save:
 
 
 func reload_level():
+	$UI.disabled = true
 	Global.enemies = {}
 	Global.curr_treasures = {}
 	$Fadeout/AnimationPlayer.play("fadeout")
@@ -96,20 +99,24 @@ func reload_level():
 
 
 func continue_game():
+	$UI.disabled = true
 	load_game()
 	call_deferred("_load_level", Global.level, Global.gate, 0)
 
 
 func start_game():
+	$UI.disabled = true
 	remove_save()
 	call_deferred("_load_level", "res://src/levels/Level1.tscn", "StartGate", 0)
 
 
 func restart_game():
+	$UI.disabled = true
 	call_deferred("_reset_game")
 
 
 func _on_exitted_scene(level_str, gate_str, offset_pct):
+	$UI.disabled = true
 	call_deferred("_switch_level", level_str, gate_str, offset_pct, true)
 
 

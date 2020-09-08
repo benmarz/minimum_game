@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 onready var default_menu = $PauseMenu
+var disabled := false
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -8,8 +9,9 @@ func _unhandled_input(event):
 			for node in get_children():
 				node.close_menu()
 			get_tree().paused = false
-		else:
+		elif not disabled:
 			default_menu.open_ui()
+
 
 func _on_switch_menu(menu_name):
 	var old_menu = null
@@ -24,6 +26,7 @@ func _on_switch_menu(menu_name):
 			found = true
 	if not found and old_menu != null:
 		old_menu.open_menu()
+
 
 func _ready():
 	for node in get_children():
