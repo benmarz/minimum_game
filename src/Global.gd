@@ -1,6 +1,7 @@
 extends Node
 
 const SAVE_FILE = "user://savegame.save"
+const ALL_TREASURES = 9
 
 var player : Player
 var level: String = ""

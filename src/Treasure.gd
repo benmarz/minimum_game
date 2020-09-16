@@ -7,8 +7,7 @@ func _ready():
 		queue_free()
 
 func player_entered(body):
-	if "treasures" in body:
-		body.treasures += 1
-		print("player now has ", body.treasures, " treasures")
+	if body.has_method("add_treasure"):
+		body.add_treasure()
 		Global.add_tresure(name)
 	queue_free()

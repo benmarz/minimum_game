@@ -2,6 +2,7 @@ class_name Player
 extends KinematicBody2D
 
 signal player_killed
+signal won
 export (int) var speed = 100
 
 var velocity := Vector2.ZERO
@@ -53,8 +54,16 @@ func enable():
 	set_physics_process(true)
 	$CollisionShape2D.disabled = false
 
+
 func count_treasures():
 	treasures = 0
 	for level in Global.treasures:
 		treasures += Global.treasures[level].size()
 	print("player has ", treasures, " treasures")
+
+
+func add_treasure():
+	treasures += 1
+	print ("player now has ", treasures, " treasures")
+	if treasures >= Global.ALL_TREASURES:
+		emit_signal("won")

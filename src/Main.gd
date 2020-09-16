@@ -122,3 +122,8 @@ func _on_exitted_scene(level_str, gate_str, offset_pct):
 
 func _ready():
 	$UI/StartMenu.open_ui()
+
+
+func _on_Player_won():
+	remove_save()
+	$UI/GameEnd.open_ui()

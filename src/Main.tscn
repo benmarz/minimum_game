@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/StartMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Main.gd" type="Script" id=3]
 [ext_resource path="res://src/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI.gd" type="Script" id=5]
+[ext_resource path="res://src/GameEnd.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fadeout"
@@ -47,6 +48,9 @@ script = ExtResource( 5 )
 [node name="PauseMenu" parent="UI" instance=ExtResource( 4 )]
 visible = false
 
+[node name="GameEnd" parent="UI" instance=ExtResource( 6 )]
+visible = false
+
 [node name="Level" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -55,4 +59,6 @@ visible = false
 [connection signal="start_game" from="UI/StartMenu" to="." method="start_game"]
 [connection signal="reload_level" from="UI/PauseMenu" to="." method="reload_level"]
 [connection signal="restart_game" from="UI/PauseMenu" to="." method="restart_game"]
+[connection signal="restart_game" from="UI/GameEnd" to="." method="restart_game"]
 [connection signal="player_killed" from="Player" to="." method="reload_level"]
+[connection signal="won" from="Player" to="." method="_on_Player_won"]
