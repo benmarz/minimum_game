@@ -15,7 +15,7 @@ func load_game():
 	print("loading game from ", OS.get_user_data_dir())
 	var save_file = File.new()
 	if not save_file.file_exists(Global.SAVE_FILE):
-		print("can't file save file at", Global.SAVE_FILE)
+		print("can't find save file at", Global.SAVE_FILE)
 		return
 	if save_file.open(Global.SAVE_FILE, File.READ) != 0:
 		print("can't open save file at ", Global.SAVE_FILE)
@@ -47,6 +47,11 @@ func _load_level(level_str: String, gate_str: String, offset_pct: float):
 	# TODO: check that we actually got a Gate, or find default gate
 	gate.enter_gate(offset_pct)
 	connect_gates(level)
+	var bounds = level.get_node_or_null("Bounds")
+	if bounds:
+		Global.player.update_camera_limits(bounds.get_rect())
+	else:
+		Global.player.update_camera_limits(Rect2(-10000000,-10000000,20000000,20000000))
 	# wait till the next physics frame for the player's location to be updated.
 	# Not sure why I need to wait two frames if not called during a physics
 	# frame. Insted of this, I could remove and player from the scene tree and

@@ -3,6 +3,9 @@ extends Node
 const SAVE_FILE = "user://savegame.save"
 const ALL_TREASURES = 9
 
+# warning-ignore:unused_signal
+signal update_treasure
+
 var player : Player
 var level: String = ""
 var gate: String = ""

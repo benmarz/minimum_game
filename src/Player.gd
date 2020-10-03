@@ -59,11 +59,18 @@ func count_treasures():
 	treasures = 0
 	for level in Global.treasures:
 		treasures += Global.treasures[level].size()
-	print("player has ", treasures, " treasures")
+	Global.emit_signal("update_treasure")
 
 
 func add_treasure():
 	treasures += 1
-	print ("player now has ", treasures, " treasures")
+	Global.emit_signal("update_treasure")
 	if treasures >= Global.ALL_TREASURES:
 		emit_signal("won")
+
+
+func update_camera_limits(rect : Rect2):
+	$Camera2D.limit_top = rect.position.y
+	$Camera2D.limit_left = rect.position.x
+	$Camera2D.limit_bottom = rect.end.y
+	$Camera2D.limit_right = rect.end.x

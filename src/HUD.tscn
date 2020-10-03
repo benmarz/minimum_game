@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/mago3.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/hud_background.png" type="Texture" id=2]
+[ext_resource path="res://src/HUD.gd" type="Script" id=3]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+margin_right = 240.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -34.5
+margin_right = 34.5
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/NinePatchRect/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 16.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Treasures:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="value" type="Label" parent="MarginContainer/NinePatchRect/HBoxContainer"]
+margin_left = 62.0
+margin_right = 69.0
+margin_bottom = 16.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "0"

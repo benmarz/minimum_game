@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/GameEnd.gd" type="Script" id=1]
+[ext_resource path="res://assets/mago3.tres" type="DynamicFont" id=2]
+
+[node name="GameEnd" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -86.5
+margin_top = -14.5
+margin_right = 86.5
+margin_bottom = 14.5
+custom_fonts/font = ExtResource( 2 )
+text = "Congratulations! You have
+collected all of the treasures!"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PressAnyKey" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+margin_left = -41.0
+margin_top = -6.5
+margin_right = 41.0
+margin_bottom = 6.5
+custom_fonts/font = ExtResource( 2 )
+text = "Press Any Key"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

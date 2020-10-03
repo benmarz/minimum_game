@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/StartMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI.gd" type="Script" id=5]
 [ext_resource path="res://src/GameEnd.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/HUD.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fadeout"
@@ -26,6 +27,8 @@ tracks/0/keys = {
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
 
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
 [node name="Fadeout" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Fadeout"]
@@ -33,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
