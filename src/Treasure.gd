@@ -10,4 +10,8 @@ func player_entered(body):
 	if body.has_method("add_treasure"):
 		body.add_treasure()
 		Global.add_tresure(name)
+		visible = false
+		set_deferred("monitoring", false)
+		$Collect.play()
+		yield($Collect, "finished")
 	queue_free()

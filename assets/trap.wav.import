@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/trap.wav-1b43ad0ad2e97b5e1dd3e64bf94d9966.sample"
+
+[deps]
+
+source_file="res://assets/trap.wav"
+dest_files=[ "res://.import/trap.wav-1b43ad0ad2e97b5e1dd3e64bf94d9966.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

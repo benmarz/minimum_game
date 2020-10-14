@@ -21,6 +21,7 @@ func find_next_visible_id():
 	for id in range(selected_id + 1, menu.get_child_count()):
 		var node = menu.get_child(id)
 		if node.visible:
+			$Switch.play()
 			return id
 	return selected_id
 
@@ -29,6 +30,7 @@ func find_prev_visible_id():
 	for id in range(selected_id - 1, -1, -1):
 		var node = menu.get_child(id)
 		if node.visible:
+			$Switch.play()
 			return id
 	return selected_id
 

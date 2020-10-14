@@ -34,11 +34,13 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity)
 
 
-func die():
+func die(obj, signal_str):
 	if not dead:
 		dead = true
 		set_physics_process(false)
 		print("player killed")
+		if obj != null:
+			yield(obj, signal_str)
 		emit_signal("player_killed")
 
 
