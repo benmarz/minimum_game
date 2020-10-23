@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/StartMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/UI.gd" type="Script" id=5]
 [ext_resource path="res://src/GameEnd.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/Formant_1.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fadeout"
@@ -59,6 +60,10 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 [connection signal="continue_game" from="UI/StartMenu" to="." method="continue_game"]
 [connection signal="start_game" from="UI/StartMenu" to="." method="start_game"]
 [connection signal="reload_level" from="UI/PauseMenu" to="." method="reload_level"]

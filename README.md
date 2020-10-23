@@ -33,3 +33,7 @@ trap.wav Copyright (c) 2015 [Little Robot Sound Factory](www.littlerobotsoundfac
 switch9.wav by [Kenney](https://www.kenney.nl), [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0) Source: https://www.kenney.nl/assets/ui-audio
 
 player.png Copyright (c) 2014 [Juan Linietsky, Ariel Manzur, Godot Engine contributors](https://godotengine.org/), [MIT](https://opensource.org/licenses/MIT) Source: [godot-demo-projects](https://github.com/godotengine/godot-demo-projects/tree/master/2d/kinematic_character) / trap.png, obstacle.png and enemy.png are derived from this original
+
+sword-hit.wav by [Pedro Santo](https://pt.linkedin.com/in/pedrobatistasanto), [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0) Source: 52458\_\_audione\_\_sword-01.wav https://freesound.org/people/audione/sounds/52458 / Clipped from original
+
+Formant\_1.wav by [Nick Farnan](https://opengameart.org/users/pudgyplatypus), [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0) Source: https://opengameart.org/content/royalty-free-game-music-loops
